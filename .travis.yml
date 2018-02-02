@@ -19,5 +19,5 @@ script: cargo test
 jobs:
   include:
     - stage: deploy
-      script: cargo install calcver --bins && cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
+      script: cargo install calcver --bins --force && cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
       rust: stable
