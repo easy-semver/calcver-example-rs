@@ -1,5 +1,6 @@
 # Calcver rust example
 
+[![Build Status](https://travis-ci.org/easy-semver/calcver-example-rs.svg?branch=master)](https://travis-ci.org/easy-semver/calcver-example-rs)
 
 ## `.calcver.yml`
 
