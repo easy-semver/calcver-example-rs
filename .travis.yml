@@ -1,6 +1,8 @@
 language: rust
 sudo: false
 cache: cargo
+rust:
+  - stable
 
 stages:
   - test
@@ -18,3 +20,4 @@ jobs:
   include:
     - stage: deploy
       script: cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
+      rust: stable
