@@ -14,15 +14,10 @@ stages:
   - name: deploy
     if: (branch = master AND type IN (push)) OR tag =~ ^v*
 
-before_install:
-  - set -e
-  - sudo apt-get update
-  - cargo install calcver --bins
-
 script: cargo test
 
 jobs:
   include:
     - stage: deploy
-      script: cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
+      script: cargo install calcver --bins && cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
       rust: stable
