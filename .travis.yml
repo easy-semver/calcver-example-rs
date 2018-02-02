@@ -2,7 +2,30 @@ language: rust
 sudo: false
 cache: cargo
 
+stages:
+  - test
+  - name: deploy
+    if: (branch = master AND type IN (push)) OR tag =~ ^v*
+
 before_install:
+  - set -e
+  - sudo apt-get update
   - cargo install calcver --bins
 
-script: calcver && cargo build
+script: cargo test
+
+jobs:
+  include:
+    - stage: deploy
+      script: cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - cmake
+      - gcc
+      - binutils-dev
+      - libiberty-dev
