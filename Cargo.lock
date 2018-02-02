@@ -49,7 +49,7 @@ dependencies = [
 
 [[package]]
 name = "calcver-example-rs"
-version = "0.1.0"
+version = "0.0.1-rc.1"
 dependencies = [
  "calcver 0.3.1-alpha.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
