@@ -1,0 +1,8 @@
+language: rust
+sudo: false
+cache: cargo
+
+before_install:
+  - cargo install calcver --bins
+
+script: calcver && cargo build
