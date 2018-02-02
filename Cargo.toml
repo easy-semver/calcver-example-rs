@@ -15,3 +15,7 @@ path = 'src/lib.rs'
 [[bin]]
 name = 'calcver_example'
 path = 'src/bin.rs'
+
+[badges]
+travis-ci = { repository = "easy-semver/calcver-example-rs" }
+maintenance = { status = "none" }
