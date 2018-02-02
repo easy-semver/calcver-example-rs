@@ -3,6 +3,11 @@ sudo: false
 cache: cargo
 rust:
   - stable
+  - nightly
+
+matrix:
+  allow_failures:
+    - rust: nightly
 
 stages:
   - test
