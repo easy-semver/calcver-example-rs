@@ -18,14 +18,3 @@ jobs:
   include:
     - stage: deploy
       script: cargo login $CARGO_API_KEY && calcver && cargo package --allow-dirty && cargo publish --allow-dirty 
-
-addons:
-  apt:
-    packages:
-      - libcurl4-openssl-dev
-      - libelf-dev
-      - libdw-dev
-      - cmake
-      - gcc
-      - binutils-dev
-      - libiberty-dev
