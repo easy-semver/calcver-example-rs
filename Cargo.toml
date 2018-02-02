@@ -1,4 +1,17 @@
 [package]
 authors = ['Jerahmeel Cosinas <me@jerahmeelcosinas.net>']
-name = 'calcver-example-rs'
-version = '0.1.0-rc.2'
+name = 'calcver_example'
+description = 'An example crate'
+documentation = 'https://github.com/easy-semver/calcver-example-rs'
+license = 'Apache-2.0'
+repository = 'https://github.com/easy-semver/calcver-example-rs'
+version = '0.0.0'
+
+
+[lib]
+name = 'calcver_example'
+path = 'src/lib.rs'
+
+[[bin]]
+name = 'calcver_example'
+path = 'src/bin.rs'
